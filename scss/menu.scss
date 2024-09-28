@@ -1,0 +1,106 @@
+@use "./partials/_global.scss" as *;
+@use "./partials/_variables.scss" as *;
+@use "./partials/_mixin.scss" as *;
+
+.menu {
+  width: 100%;
+
+  &-heading {
+    height: 31rem;
+    @include background($color-light-gray, "/assets/images/coffee-circle.jpg");
+    @include flex-center();
+    position: relative;
+
+    &__title {
+      @include flex-center();
+      border: 5px solid $color-nitro-blue;
+      padding: 3rem;
+      color: $color-white;
+      background: transparent;
+      position: relative;
+      z-index: 1;
+    }
+
+    &__background {
+      width: 275px;
+      height: 185px;
+      position: absolute;
+      @include flex-center();
+      background-color: $color-graphite;
+      z-index: 0;
+      transform: translate(15px, 15px);
+    }
+  }
+
+  &-bar {
+    background-color: $color-graphite;
+    color: $color-white;
+
+    &__list {
+      @include flex-center();
+      padding: 1.25rem 1rem 1.25rem 2.5rem;
+
+      &-items {
+        display: flex;
+      }
+
+      &-item {
+        border-left: 0.25rem solid $color-nitro-blue;
+        padding: 0 1.5rem;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &-full {
+    @include flex-center(column);
+    text-align: center;
+
+    &__container {
+      padding: 0 0 2rem 0;
+      width: 100%;
+
+      &--pink {
+        background-color: $color-nitro-pink;
+      }
+
+      &--light-grey {
+        background-color: $color-light-gray;
+      }
+      
+      &--bottom {
+        padding:0 0 1rem 0;
+      }
+      
+      &-title {
+        padding: 2rem 0;
+      }
+    }
+
+    &__item {
+      
+      &-name {
+      font-size: 2.06rem;
+      font-weight: 300;
+      padding: 0.3rem;
+      }
+    
+      &-description {
+        font-size: 1.13rem;
+        font-weight: 500;
+        padding: 0 30%;
+      
+        &--italic {
+        font-style: italic;
+        }
+      }
+
+      &-price {
+        color: $color-nitro-blue;
+        padding: 0.3rem 0 0;
+        font-weight: 600;
+      }
+    }
+  }
+}

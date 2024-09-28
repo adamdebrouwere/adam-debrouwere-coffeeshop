@@ -1,0 +1,55 @@
+@use "./_variables.scss" as *;
+
+@mixin background($color, $image: null) {
+  background-color: $color;
+  @if $image {
+    background-image: url($image);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@mixin discount-banner-style() {
+  color: $color-white;
+  background-color: $color-graphite;
+  animation: color-change infinite 2.5s;
+}
+
+@mixin discount-banner-style-text() {
+  font-size: 2.7rem;
+  font-weight: 500;
+  padding: 2.5rem 0;
+}
+
+@mixin card-style($width: 19rem, $border-radius: 0.85rem) {
+  width: $width;
+  padding: 1rem 0 0 0;
+  border-radius: $border-radius;
+  background-color: $color-white;
+  box-shadow: 0 5px 9px -1px rgba(0, 0, 0, 0.25);
+}
+
+@mixin faint-image-style($width: 120px, $opacity: 0.25) {
+  width: $width;
+  opacity: $opacity;
+  position: absolute;
+}
+
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: $color-graphite;
+  }
+  50% {
+    background-color: $color-nitro-blue;
+  }
+  100% {
+    background-color: $color-graphite;
+  }
+}
